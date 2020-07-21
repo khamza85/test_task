@@ -11,4 +11,4 @@ browse at http://localhost:5000/
 `docker-compose down`
 
 ## See live logs
-docker logs -f synel_web_1
+`docker logs -f synel_web_1`
