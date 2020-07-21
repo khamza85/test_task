@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synel.Web", "Synel.Web\Synel.Web.csproj", "{95A0238A-5508-4312-8A4E-70816A07499D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synel.Tests", "Synel.Tests\Synel.Tests.csproj", "{33C6B81D-9EED-47DF-8F31-F0827D446749}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95A0238A-5508-4312-8A4E-70816A07499D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A0238A-5508-4312-8A4E-70816A07499D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A0238A-5508-4312-8A4E-70816A07499D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A0238A-5508-4312-8A4E-70816A07499D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C6B81D-9EED-47DF-8F31-F0827D446749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C6B81D-9EED-47DF-8F31-F0827D446749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C6B81D-9EED-47DF-8F31-F0827D446749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C6B81D-9EED-47DF-8F31-F0827D446749}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,128 @@
+﻿@model Synel.Web.Models.EmployeesViewModel
+
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<div class="text-center">
+  <h1 class="display-4">Employees</h1>
+
+  <div class="d-flex flex-row my-3">
+    <form asp-action="Import" method="post" enctype="multipart/form-data" class="form-inline mr-3">
+      <div class="input-group">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="validatedInputGroupCustomFile" required name="csv">
+          <label class="custom-file-label" for="validatedInputGroupCustomFile">Choose CSV file...</label>
+        </div>
+        <div class="input-group-append">
+           <button class="btn btn-outline-secondary" type="submit">Import</button>
+        </div>
+      </div>
+    </form>
+    <form asp-action="Index" method="post" class="form-inline" id="fm-filter">
+      <input type="hidden" asp-for="Query.Sort" />
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" asp-for="Query.Search">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+      </div>
+    </form>
+    <a asp-action="Add" class="btn btn-outline-info ml-auto" role="button">New employee</a>
+  </div>
+
+  <partial name="_Alert" for="Alert" >
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <caption>
+        @(Model.Employees.Length == 0 ? "Empty" : Model.Employees.Length.ToString()) rows
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.PayrollNo))">Payroll</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.FirstName))">First name</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.LastName))">Last name</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.BirthDate))">Birth date</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.Telephone))">Telephone</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.MobilePhone))">Mobile</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.AddressLine1))">Address</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.AddressLine2))">Address 2</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.AddressPostalCode))">Postal</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.Email))">Email</a>
+          </th>
+          <th scope="col">
+            <a data-sort="@(nameof(Employee.StartDate))">Start date</a>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var employee in Model.Employees)
+        {
+          <tr>
+            <td>
+              @Html.DisplayFor(_ => employee.PayrollNo)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.FirstName)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.LastName)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.BirthDate)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.Telephone)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.MobilePhone)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.AddressLine1)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.AddressLine2)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.AddressPostalCode)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.Email)
+            </td>
+            <td>
+              @Html.DisplayFor(_ => employee.StartDate)
+            </td>
+            <td>
+              <div class="btn-group btn-group-sm" role="group">
+                <a asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-light" role="button" title="Edit">✎</a>
+                <a asp-action="Remove" asp-route-id="@employee.Id" class="btn btn-light" role="button" title="Remove"
+                  onclick="return confirm('Are you sure?');">🗑</a>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

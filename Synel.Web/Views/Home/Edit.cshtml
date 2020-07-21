@@ -1,0 +1,78 @@
+@model Synel.Web.Models.Employee
+
+@{
+    ViewData["Title"] = "Employee details";
+}
+
+
+<form asp-action="Save" method="POST" class="needs-validation" novalidate>
+  <div asp-validation-summary="ModelOnly"></div>
+  <input type="hidden" asp-for="Id" />
+  <div class="row">
+    <div class="form-group col-md-3">
+      <label asp-for="FirstName"></label>
+      <input asp-for="FirstName" class="form-control">
+      <span asp-validation-for="FirstName"></span>
+    </div>
+    <div class="form-group col-md-3">
+      <label asp-for="LastName"></label>
+      <input asp-for="LastName" class="form-control">
+      <span asp-validation-for="LastName"></span>
+    </div>
+    <div class="form-group col-md-3">
+      <label asp-for="Email"></label>
+      <input asp-for="Email" class="form-control">
+      <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group col-md-3">
+      <label asp-for="BirthDate"></label>
+      <input asp-for="BirthDate" class="form-control">
+      <span asp-validation-for="BirthDate"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-3">
+      <label asp-for="Telephone"></label>
+      <input asp-for="Telephone" class="form-control">
+      <span asp-validation-for="AddressLine1"></span>
+    </div>
+    <div class="form-group col-md-3">
+      <label asp-for="MobilePhone"></label>
+      <input asp-for="MobilePhone" class="form-control">
+      <span asp-validation-for="MobilePhone"></span>
+    </div>
+    <div class="form-group col-md-3">
+      <label asp-for="PayrollNo"></label>
+      <input asp-for="PayrollNo" class="form-control">
+      <span asp-validation-for="PayrollNo"></span>
+    </div>
+    <div class="form-group col-md-3">
+      <label asp-for="StartDate"></label>
+      <input asp-for="StartDate" class="form-control">
+      <span asp-validation-for="StartDate"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-5">
+      <label asp-for="AddressLine1"></label>
+      <input asp-for="AddressLine1" class="form-control">
+      <span asp-validation-for="AddressLine1"></span>
+    </div>
+    <div class="form-group col-md-5">
+      <label asp-for="AddressLine2"></label>
+      <input asp-for="AddressLine2" class="form-control">
+      <span asp-validation-for="AddressLine2"></span>
+    </div>
+    <div class="form-group col-md-2">
+      <label asp-for="AddressPostalCode"></label>
+      <input asp-for="AddressPostalCode" class="form-control">
+      <span asp-validation-for="AddressPostalCode"></span>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
